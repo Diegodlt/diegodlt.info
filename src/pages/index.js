@@ -17,7 +17,7 @@ const IndexPage = () =>{
           <div className="main-content">
             <Navbar></Navbar>
             <div className="title">
-              <h1>Full Stack Developer</h1>
+              What is going on
             </div>
             <div className="footer">
             <a href="https://github.com/Diegodlt" target="_blank" rel="noopener noreferrer">

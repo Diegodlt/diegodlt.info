@@ -36,14 +36,17 @@ button{
   text-align: center;
 }
 
-.title h1{
+.title{
   font-size: 2rem;
+  font-family: 'Raleway';
+  font-weight: 200;
 }
 
 .navbar{
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  font-family: 'Raleway';
 }
 
 .nav-links{
@@ -63,8 +66,22 @@ button{
   margin: 0 10px;
 }
 
+section p{
+  text-align: center;
+  width: 700px;
+  margin: auto;
+  font-size: 20px;
+}
+
+section h2{
+  text-align: center;
+}
+
 @media(max-width: 767px){
   .nav-links div:not([class="blog-link"]){
     display: none;
+  }
+  .navbar{
+    padding: 15px;
   }
 }
