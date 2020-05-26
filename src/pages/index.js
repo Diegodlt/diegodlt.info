@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import Typist from 'react-typist'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,7 +18,11 @@ const IndexPage = () =>{
           <div className="main-content">
             <Navbar></Navbar>
             <div className="title">
-              What is going on
+              <Typist cursor={{hideWhenDone: true}}>
+                  <span>First Sentence</span>
+                  <Typist.Backspace count={8} delay={500}/>
+                  <span>This is second sentence</span>
+              </Typist>
             </div>
             <div className="footer">
             <a href="https://github.com/Diegodlt" target="_blank" rel="noopener noreferrer">
