@@ -18,10 +18,14 @@ const IndexPage = () =>{
           <div className="main-content">
             <Navbar></Navbar>
             <div className="title">
-              <Typist cursor={{hideWhenDone: true}}>
-                  <span>First Sentence</span>
-                  <Typist.Backspace count={8} delay={500}/>
-                  <span>This is second sentence</span>
+              <Typist cursor={{hideWhenDone: true, blink: true}}>
+                  <span>10010001001001</span>
+                  <Typist.Backspace count={14} delay={500}/>
+                  <span>I mean...</span>
+                  <Typist.Backspace count={10} delay={500}/>
+                  <span>Hello, I'm a</span>
+                  <br/>
+                  <span><strong>Software Developer</strong> who loves all things technology</span>
               </Typist>
             </div>
             <div className="footer">
