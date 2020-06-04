@@ -1,16 +1,15 @@
 import React from 'react'
 import { navigate } from '@reach/router'
 
-const Navbar = () => (
+const Navbar = ({toggleAboutModal, toggleSkillsModal}) => (
     <nav className="navbar">
         <div>Diego De La Torre</div>
         <div className="nav-links">
-            <div onClick={() => {navigate('#about')}}>About</div>
-            <div onClick={() => {navigate('#skills')}}>Skills</div>
-            <div>Portfolio</div>
-            <div className="blog-link">
+            <div onClick={() => toggleAboutModal(true)}>About</div>
+            <div onClick={() => toggleSkillsModal(true)}>Skills</div>
+            {/* <div className="blog-link">
                 <a>Blog</a>
-            </div>
+            </div> */}
         </div>
     </nav>
 )
