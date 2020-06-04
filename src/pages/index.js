@@ -44,12 +44,16 @@ const IndexPage = () =>{
             </div>
           </div>
         </div>
-        <Modal toggleModal={toggleAboutModal} showModal={showAboutModal}>
-          <h1>About</h1>
-        </Modal>
-        <Modal toggleModal={toggleSkillsModal} showModal={showSkillsModal}>
-          <h1>Skills</h1>
-        </Modal>
+        {showAboutModal &&
+          <Modal toggleModal={toggleAboutModal}>
+            <h1>About</h1>
+          </Modal>
+        }
+        {showSkillsModal &&
+          <Modal toggleModal={toggleSkillsModal}>
+            <h1>Skills</h1>
+          </Modal>
+        }
     </Layout>
   )
 }

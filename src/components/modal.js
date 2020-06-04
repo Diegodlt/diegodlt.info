@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Modal = ({toggleModal, showModal, children}) => (
-    <div style={showModal ? styles: {display: "none"}}>
+const Modal = ({toggleModal, children}) => (
+    <div style={styles}>
         <span onClick={() => toggleModal(false)}>X</span>
         <span>{children}</span>
     </div>

@@ -32,6 +32,7 @@ button{
   justify-content: space-between;
   background-image: url("../images/bridge.jpg");
   background-position: center;
+  background-size: cover;
 }
 
 .title, .footer{
