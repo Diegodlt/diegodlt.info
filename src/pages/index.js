@@ -8,10 +8,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
 import Modal from '../components/modal'
-import Bridge from '../images/bridge.jpg'
 
 const IndexPage = () =>{
-  const data = useStaticQuery(query);
   const [showAboutModal, toggleAboutModal] = useState(false);
   const [showSkillsModal, toggleSkillsModal] = useState(false);
 
@@ -62,23 +60,4 @@ const styles = {
   position: "relative"
 }
 
-const imageStyle = {
-  width: "100%",
-  height: "100vh",
-  position: "fixed",
-  top: 0,
-  left: 0
-}
-
-const query = graphql`
-{
-    fluid:file(relativePath: { eq:"bridge.jpg"}){
-        childImageSharp {
-            fluid(jpegQuality: 100){
-                ...GatsbyImageSharpFluid_tracedSVG
-            }
-        }
-    }
-}
-`
 export default IndexPage
