@@ -10,14 +10,14 @@ const IconCard = styled.div`
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 25px 40px;
     align-items: center;
 `
 
 const Content = styled.div`
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
 
