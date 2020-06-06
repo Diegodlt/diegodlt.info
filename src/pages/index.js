@@ -35,10 +35,10 @@ const IndexPage = () =>{
               </Typist>
             </div>
             <div className="footer">
-              <a href="https://github.com/Diegodlt" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/diegodlt/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin />
               </a>
-              <a href="https://www.linkedin.com/in/diegodlt/" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Diegodlt" target="_blank" rel="noopener noreferrer">
                   <FaGithub />
               </a>
             </div>
