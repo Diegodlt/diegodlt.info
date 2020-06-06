@@ -1,21 +1,12 @@
 import React from 'react'
 
+import styles from './modal.module.css'
+
 const Modal = ({toggleModal, children}) => (
-    <div style={styles}>
-        <span onClick={() => toggleModal(false)}>X</span>
-        <span>{children}</span>
+    <div className={styles.Modal}>
+        <span onClick={() => toggleModal(false)} className={styles.Exit}>X</span>
+        <span className={styles.Content}>{children}</span>
     </div>
 )
-
-const styles = {
-    width: "100%",
-    height: "100vh",
-    position: "fixed",
-    border: "1px solid black",
-    top: 0,
-    left: 0,
-    backgroundColor: "rgba(200, 200, 200, 0.5)",
-    zIndex: 100
-}
 
 export default Modal
