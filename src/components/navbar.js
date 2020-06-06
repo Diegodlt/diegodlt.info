@@ -6,9 +6,6 @@ const Navbar = ({toggleAboutModal, toggleSkillsModal}) => (
         <div className="nav-links">
             <div onClick={() => toggleAboutModal(true)}>About</div>
             <div onClick={() => toggleSkillsModal(true)}>Skills</div>
-            {/* <div className="blog-link">
-                <a>Blog</a>
-            </div> */}
         </div>
     </nav>
 )

@@ -8,7 +8,7 @@ const About = () => (
         <h1 style={{textAlign: "center"}}>About</h1>
         <p><strong>Hi,</strong></p>
         <p>
-            My name is Diego and I'm a developer living in the sunshine state (Florida), currently working with the .Net stack 
+            My name is Diego and I'm a developer living in the sunshine state (Florida) currently working with the .Net stack 
             at Highland Precision Ag.
             I'm passionate about building amazing and impactful products, regardless of the framework or technology stack. 
         </p>
@@ -21,6 +21,5 @@ const About = () => (
         </p>
     </Content>
 )
-
 
 export default About
