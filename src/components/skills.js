@@ -2,6 +2,7 @@ import React from "react"
 import { FaReact, FaAngular, FaNodeJs } from "react-icons/fa"
 import { AiFillCloud, AiOutlineConsoleSql } from "react-icons/ai"
 import { DiMongodb } from "react-icons/di"
+import { TiVendorMicrosoft } from "react-icons/ti"
 import styled from "styled-components"
 
 const StyledIcon = styled.div`font-size: 5rem;`
@@ -55,16 +56,16 @@ const Skills = () => {
             </IconCard> 
             <IconCard>
                 <StyledIcon>
-                    <AiOutlineConsoleSql/>
-                </StyledIcon>
-                <span>SQL</span>
-            </IconCard> 
-            <IconCard>
-                <StyledIcon>
                     <DiMongodb/>
                 </StyledIcon>
                 <span>MongoDB</span>
             </IconCard> 
+            <IconCard>
+                <StyledIcon>
+                    <TiVendorMicrosoft />
+                </StyledIcon>
+                <span>.Net</span>
+            </IconCard>
         </Content>   
     )
 }
