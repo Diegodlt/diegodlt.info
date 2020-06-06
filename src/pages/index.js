@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Navbar from "../components/navbar"
 import Modal from '../components/modal'
 import About from '../components/about'
+import Skills from "../components/skills"
 
 const IndexPage = () =>{
   const [showAboutModal, toggleAboutModal] = useState(false);
@@ -50,7 +51,7 @@ const IndexPage = () =>{
         }
         {showSkillsModal &&
           <Modal toggleModal={toggleSkillsModal}>
-            <h1>Skills</h1>
+            <Skills></Skills>
           </Modal>
         }
     </Layout>

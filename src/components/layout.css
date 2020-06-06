@@ -82,7 +82,7 @@ section h2{
 
 @media(max-width: 767px){
   .nav-links div:not([class="blog-link"]){
-    display: none;
+    /* display: none; */
   }
   .navbar{
     padding: 15px;

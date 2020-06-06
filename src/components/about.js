@@ -1,7 +1,10 @@
 import React from 'react'
+import styled from "styled-components"
+
+const Content = styled.div`padding: 10px;`
 
 const About = () => (
-    <>
+    <Content>
         <h1 style={{textAlign: "center"}}>About</h1>
         <p><strong>Hi,</strong></p>
         <p>
@@ -16,7 +19,7 @@ const About = () => (
         <p>
             Other than that I like watching movies, drinking coffee, and eating good food. 
         </p>
-    </>
+    </Content>
 )
 
 
