@@ -51,6 +51,7 @@ const IndexPage = () =>{
         }
         {showSkillsModal &&
           <Modal toggleModal={toggleSkillsModal}>
+            <h1 style={{textAlign: "center"}}>Skills</h1>
             <Skills></Skills>
           </Modal>
         }
