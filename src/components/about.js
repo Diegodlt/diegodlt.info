@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-const Content = styled.div`padding: 10px;`
+const Content = styled.div` padding: 10px; max-width: 700px; margin: auto;`
 
 const About = () => (
     <Content>
