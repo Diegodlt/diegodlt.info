@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import Typist from 'react-typist'
 
@@ -8,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
 import Modal from '../components/modal'
+import About from '../components/about'
 
 const IndexPage = () =>{
   const [showAboutModal, toggleAboutModal] = useState(false);
@@ -46,7 +45,7 @@ const IndexPage = () =>{
         </div>
         {showAboutModal &&
           <Modal toggleModal={toggleAboutModal}>
-            <h1>About</h1>
+            <About></About>
           </Modal>
         }
         {showSkillsModal &&
