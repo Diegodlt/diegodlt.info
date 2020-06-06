@@ -23,11 +23,13 @@
 }
 
 .Exit{
-    color: blue;
+    color: white;
     position: absolute;
     top: 25px;
     right: 40px;
     cursor: pointer;
+    font-size: 3rem;
+    transform: rotate(45deg);
 }
 
 @media(max-width: 767px){
