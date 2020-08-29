@@ -53,7 +53,7 @@ const Blog = () => {
 
     return(
         <Layout>
-            <SEO title="Blog"></SEO>
+            <SEO title="Blog" meta="A blog written by Diego De La Torre"></SEO>
             <Share></Share>
             <BlogTitle>
               A Blog by&nbsp;
