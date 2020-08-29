@@ -35,16 +35,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Raleway`,
-            variants: ["400", "300", "200"],
-          },
-   
-        ],
-      },
+      resolve: 'gatsby-plugin-web-font-loader',
+      options:{
+        google:{
+          families: ['Raleway:200, 300, 400, 500, 700','Merriweather', 'Roboto Mono:400, 500, 600, 700']
+        }
+      }
     },
     `gatsby-transformer-remark`
     // this (optional) plugin enables Progressive Web App + Offline functionality
