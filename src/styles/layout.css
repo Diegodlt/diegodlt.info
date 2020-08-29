@@ -48,7 +48,7 @@ button{
 .navbar{
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
   font-family: 'Raleway';
 }
 

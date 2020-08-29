@@ -1,27 +1,13 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from '../components/share'
+import BlogNavbar from '../components/blogNavbar'
 import "../styles/blog.css"
-
-const BlogTitle = styled.h2`
-  text-align: center;
-  border-bottom: 1px solid black;
-  padding-bottom: 15px;
-  font-family: 'Raleway'
-`
-
-const HomeLink = styled(props => <Link {...props} />)`
-  color: black;
-  text-decoration: none;
-  &:hover{
-    color: blue;
-  }
-`
 
 const BlogContent = styled.div`
   width: 700px;
@@ -53,14 +39,9 @@ const Blog = () => {
 
     return(
         <Layout>
-            <SEO title="Blog" meta="A blog written by Diego De La Torre"></SEO>
+            <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
             <Share></Share>
-            <BlogTitle>
-              A Blog by&nbsp;
-                <HomeLink to="/">
-                  Diego De La Torre
-                </HomeLink>
-            </BlogTitle>
+            <BlogNavbar></BlogNavbar>
             <BlogContent>
               {data.allMarkdownRemark.edges.map(edge=>{
                   return(
