@@ -6,18 +6,26 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from '../components/share'
+import "../styles/blog.css"
 
 const BlogTitle = styled.h2`
   text-align: center;
   border-bottom: 1px solid black;
   padding-bottom: 15px;
+  font-family: 'Raleway'
 `
+
 const HomeLink = styled(props => <Link {...props} />)`
   color: black;
   text-decoration: none;
   &:hover{
     color: blue;
   }
+`
+
+const BlogContent = styled.div`
+  width: 700px;
+  margin: auto;
 `
 
 const Blog = () => {
@@ -53,17 +61,19 @@ const Blog = () => {
                   Diego De La Torre
                 </HomeLink>
             </BlogTitle>
-            {data.allMarkdownRemark.edges.map(edge=>{
-                return(
-                <article key={edge.node.id}>
-                    <Link to={`/${edge.node.fields.slug}`}>
-                    <h1>{edge.node.frontmatter.title}</h1>
-                    </Link>
-                    {edge.node.frontmatter.subtitle? <p>{edge.node.frontmatter.subtitle}</p>: null}
-                    <time>{edge.node.frontmatter.date}</time>
-                </article>
-                )
-            })}
+            <BlogContent>
+              {data.allMarkdownRemark.edges.map(edge=>{
+                  return(
+                  <article key={edge.node.id}>
+                      <Link to={`/${edge.node.fields.slug}`}>
+                      <h1>{edge.node.frontmatter.title}</h1>
+                      </Link>
+                      {edge.node.frontmatter.subtitle? <p>{edge.node.frontmatter.subtitle}</p>: null}
+                      <time>{edge.node.frontmatter.date}</time>
+                  </article>
+                  )
+              })}
+            </BlogContent>
         </Layout>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoPlus} from "react-icons/go"
 
-import styles from './modal.module.css'
+import styles from '../styles/modal.module.css'
 
 const Modal = ({toggleModal, children}) => (
     <div className={styles.Modal}>
