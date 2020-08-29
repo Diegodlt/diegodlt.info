@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const Navbar = ({toggleAboutModal, toggleSkillsModal}) => (
     <nav className="navbar">
-        <div>Diego De La Torre</div>
+        <Link to="/">Diego De La Torre</Link>
         <div className="nav-links">
             <div onClick={() => toggleAboutModal(true)}>About</div>
             <div onClick={() => toggleSkillsModal(true)}>Skills</div>
