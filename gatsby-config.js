@@ -38,7 +38,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options:{
         google:{
-          families: ['Raleway:200, 300, 400, 500, 700','Merriweather', 'Roboto Mono:400, 500, 600, 700']
+          families: ['Raleway:200, 300, 400, 500, 700','Merriweather', 'Open Sans:400, 600, 700']
         }
       }
     },

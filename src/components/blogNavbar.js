@@ -8,7 +8,6 @@ const Navbar = styled.div`
     font-family: 'Raleway';
     font-size: 1.25rem;
     padding: 20px;
-    border-bottom: 1px solid rgba(0,0,0, 0.5);
     box-shadow: 0px 0px 5px -1px rgba(0,0,0, 0.3);
 `
 const HomeLink = styled(props => <Link {...props} />)`

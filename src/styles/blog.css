@@ -1,6 +1,6 @@
 article{
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+    padding: 30px 0 29px 0;
 }
 
 article:last-child{
@@ -10,8 +10,8 @@ article:last-child{
 article h1{
     color: black;
     font-size: 2.25rem;
-    margin-bottom: 0;
-    margin-top: 40px;
+    margin: 0;
+    font-family: 'Raleway';
 }
 
 article h1:hover{
@@ -24,9 +24,11 @@ article a{
 
 article p{
     color: gray;
-    margin-top: 5px;
+    margin: 5px 0;
+    font-family: 'Open Sans';
 }
 
 article time{
     color: gray;
+    font-family: 'Open Sans';
 }
