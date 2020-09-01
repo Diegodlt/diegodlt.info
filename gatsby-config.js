@@ -5,6 +5,14 @@ module.exports = {
     author: `Diego De La Torre`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-176947288-1",
+        head: true,
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,13 +46,17 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options:{
         google:{
-          families: ['Raleway:200, 300, 400, 500, 700','Merriweather', 'Open Sans:400, 600, 700']
+          families: ['Raleway:200, 300, 400, 500, 600, 700, 800, 900','Merriweather', 'Open Sans:400, 600, 700']
         }
       }
     },
-    `gatsby-transformer-remark`
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ]
+      }
+    }
   ],
 }
