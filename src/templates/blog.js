@@ -24,6 +24,9 @@ const PostBody = styled.div`
     h1{
         font-family: 'Raleway';
     }
+    h2{
+        font-size: 2rem;
+    }
 `
 
 const Time = styled.time`
