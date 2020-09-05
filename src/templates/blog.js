@@ -10,12 +10,18 @@ import BlogNavbar from '../components/blogNavbar'
 const Content = styled.div`
     max-width: 700px;
     margin: auto;
+    @media(max-width: 767px){
+        padding: 0 20px;
+    }
 `
 
 const PostTitle = styled.h1`
     font-family: 'Raleway';
-    font-size: 3rem;
+    font-size: 40px;
     margin-bottom: 10px;
+    @media(max-width: 767px){
+        font-size: 30px;
+    }
 `
 
 const PostBody = styled.div`
@@ -25,7 +31,16 @@ const PostBody = styled.div`
         font-family: 'Raleway';
     }
     h2{
-        font-size: 2rem;
+        font-size: 32px;
+    }
+    @media(max-width: 767px){
+        font-size: 18px;
+        h2{
+            font-size: 26px;
+        }
+        h3{
+            font-size: 20px;
+        }
     }
 `
 

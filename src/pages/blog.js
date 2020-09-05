@@ -10,8 +10,11 @@ import BlogNavbar from '../components/blogNavbar'
 import "../styles/blog.css"
 
 const BlogContent = styled.div`
-  width: 700px;
+  max-width: 700px;
   margin: auto;
+  @media(max-width: 767px){
+    padding: 0 20px;
+  }
 `
 
 const Blog = () => {

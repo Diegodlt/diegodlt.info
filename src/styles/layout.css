@@ -10,15 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button{
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  outline: inherit;
-  font-size: 2rem;
-}
-
 .main-content{
   position: absolute;
   top: 0;

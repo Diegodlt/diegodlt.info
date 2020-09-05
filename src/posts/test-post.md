@@ -16,6 +16,12 @@ date: "Feb 25, 2020"
     pre[class*="language-"]{
         font-size: 14px;
     }
+
+    @media(max-width: 767px){
+      pre[class*="language-"]{
+        font-size: 12px;
+      }
+    }
 </style>
 
 I’ve always felt that small projects, as simple as they might seem, are a great way to learn or reinforce one’s knowledge of a technology or framework. Although one might feel that his or her effort might be wasted working on something that might not be significant, small projects provide great insight that can be extremely beneficial later in one’s career. 

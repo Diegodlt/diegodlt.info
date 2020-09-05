@@ -38,6 +38,13 @@ const IconContainer = styled.div`
     span{
         margin: 0 0 6px 6px;
     }
+    @media(max-width: 767px){
+        flex-direction: row;
+        bottom: 0;
+        right: 0;
+        justify-content: flex-end;
+        height: auto;
+    }
 `
 
 const Icon = styled.div`
@@ -50,13 +57,24 @@ const Icon = styled.div`
     &:hover{
         animation: ${expand} 0.1s linear both;
     }
+`
 
+const ShareLabel = styled.button`
+    border: 1px solid black;
+    text-align: center;
+    font-size: 10px;
+    background-color: white;
+    width: 50px;
+    padding: 19px 0;
+    @media(max-width: 767px){
+        padding: 18px 8px;
+    }
 `
 
 const Share = () => {
     return(
         <IconContainer>
-            <span>Shares</span>
+            <ShareLabel>Shares</ShareLabel>
             <LinkedinShareButton>
                 <Icon>
                     <FiLinkedin></FiLinkedin>

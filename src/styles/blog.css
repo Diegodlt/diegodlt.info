@@ -32,3 +32,12 @@ article time{
     color: gray;
     font-family: 'Open Sans';
 }
+
+@media(max-width: 767px){
+    article h1{
+        font-size: 22px;
+    }
+    article p, time{
+        font-size: 14px;
+    }
+}
