@@ -7,9 +7,9 @@ const Navbar = styled.div`
     justify-content: space-between;
     font-family: 'Raleway';
     padding: 20px;
-    letter-spacing: 2px;
     box-shadow: 0px 0px 5px -1px rgba(0,0,0, 0.3);
-    font-size: 1.25rem;
+    letter-spacing: 1px;
+    font-size: 19px;
 `
 
 const NavLink = styled(props => <Link {...props} />)`

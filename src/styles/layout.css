@@ -50,8 +50,8 @@ button{
   justify-content: space-between;
   padding: 20px;
   font-family: 'Raleway';
-  letter-spacing: 2px;
-  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-size: 19px;
 }
 
 .nav-links{
