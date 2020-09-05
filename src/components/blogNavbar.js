@@ -6,38 +6,30 @@ const Navbar = styled.div`
     display: flex;
     justify-content: space-between;
     font-family: 'Raleway';
-    font-size: 1.25rem;
     padding: 20px;
+    letter-spacing: 2px;
     box-shadow: 0px 0px 5px -1px rgba(0,0,0, 0.3);
-`
-const HomeLink = styled(props => <Link {...props} />)`
-  color: #00a8f3;
-  text-decoration: none;
-  &:hover{
-    color: blue;
-  }
+    font-size: 1.25rem;
 `
 
-const BlogLink = styled(props => <Link {...props} />)`
-  color: black;
+const NavLink = styled(props => <Link {...props} />)`
   text-decoration: none;
+  color: black;
   &:hover{
-      color: #00a8f3;
+    color: #00a8f3;
   }
 `
 
 const BlogNavbar = () => {
+    const activeLinkStyle = { color: "#00a8f3"}
     return(
         <Navbar>
-            <div>
-                A Blog by&nbsp;
-                <HomeLink to="/">
-                    Diego De La Torre
-                </HomeLink>
-            </div>
-            <BlogLink to="/blog">
+            <NavLink to="/" activeStyle={activeLinkStyle}>
+                Diego De La Torre
+            </NavLink>
+            <NavLink to="/blog" activeStyle={activeLinkStyle}>
                 Blog
-            </BlogLink>
+            </NavLink>
         </Navbar>
     );
 }

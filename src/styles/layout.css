@@ -50,16 +50,17 @@ button{
   justify-content: space-between;
   padding: 20px;
   font-family: 'Raleway';
+  letter-spacing: 2px;
+  font-size: 1.25rem;
 }
 
 .nav-links{
-  letter-spacing: 2px;
+  display: flex;
+  cursor: pointer;
 }
 
 .nav-links div{
-  display: inline;
   margin-left: 30px;
-  cursor: pointer;
 }
 
 .navbar a{
