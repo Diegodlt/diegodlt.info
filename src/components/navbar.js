@@ -13,9 +13,13 @@ const Nav = styled.div`
     font-family: 'Raleway';
     letter-spacing: 1px;
     font-size: 19px;
+    box-shadow: ${props => props.home? "" : "0px 0px 5px -1px rgba(0,0,0, 0.3)"};
     a{
-        color: white;
+        color: ${props => props.home ? "white" : "black"};
         text-decoration: none;
+    }
+    @media(max-width: 767px){
+        padding: 10px 20px;
     }
 `
 
@@ -44,28 +48,52 @@ const MobileLinks = styled.div`
     a{
         padding: 20px 0;
         font-size: 30px;
+        color: white;
     }
 `
+
+const getIconColor = (isHome, isOpen) =>{
+    if(!isOpen){
+       if(isHome){
+           return "white";
+       }else{
+           return "black";
+       } 
+    }
+    return "white";
+}
+
+const ActiveLink = (props) => {
+    const activeLinkStyle = { color: "#00a8f3" }
+    return(
+        <Link {...props} activeStyle={activeLinkStyle}>
+            {props.children}
+        </Link>
+    )
+}
+
 const Navbar = () => {
 
     const [isOpen, setOpen] = useState(false);
+    const activeLinkStyle = { color: "#00a8f3"}
+    const isHome = window.location.pathname === '/' ? "home" : "";
 
     return(
-        <Nav>
+        <Nav home={isHome}>
             <Link to="/">Diego De La Torre</Link>
             <Bun>
-                <Hamburger size={20} toggled={isOpen} toggle={setOpen}/>
+                <Hamburger size={20} toggled={isOpen} toggle={setOpen} color={getIconColor(isHome, isOpen)}/>
             </Bun>
             <EndItems>
-                <Link to="/about">About</Link>
-                <Link to="/skills">Skills</Link>
-                <Link to="/blog">Blog</Link>
+                <ActiveLink to="/about">About</ActiveLink>
+                <ActiveLink to="/skills">Skills</ActiveLink>
+                <ActiveLink to="/blog">Blog</ActiveLink>
             </EndItems>
             <Modal isOpen={isOpen}>
                 <MobileLinks>
-                    <Link to="/about">About</Link>
-                    <Link to="/skills">Skills</Link>
-                    <Link to="/blog">Blog</Link>
+                    <ActiveLink to="/about">About</ActiveLink>
+                    <ActiveLink to="/skills">Skills</ActiveLink>
+                    <ActiveLink to="/blog">Blog</ActiveLink>
                 </MobileLinks>
             </Modal>
         </Nav>
