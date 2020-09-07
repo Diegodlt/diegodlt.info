@@ -10,29 +10,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-	-webkit-animation: scale-up-tr 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: scale-up-tr 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.Content{
-    width: 100%;
-    color: white;
-    font-size: 2rem;
-    padding: 16px;
-    overflow: auto;
-    font-family: Raleway;
+.Entrance{
+        composes: Modal;
+        -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
+    
 .Exit{
-    color: white;
-    position: absolute;
-    top: 25px;
-    right: 40px;
-    cursor: pointer;
-    font-size: 3rem;
-    transform: rotate(45deg);
-    -webkit-animation: rotate-center 0.4s ease-in-out both;
-    animation: rotate-center 0.4s ease-in-out both;
+        composes: Modal;
+        -webkit-animation: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        animation: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 @media(max-width: 767px){
@@ -58,52 +47,68 @@
  * animation scale-up-tr
  * ----------------------------------------
  */
- @-webkit-keyframes scale-up-tr {
-    0% {
-      -webkit-transform: scale(0.2);
-              transform: scale(0.2);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-    }
-  }
-  @keyframes scale-up-tr {
-    0% {
-      -webkit-transform: scale(0.2);
-              transform: scale(0.2);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-    }
-  }
+ @-webkit-keyframes scale-in-ver-top {
+        0% {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+      }
+      @keyframes scale-in-ver-top {
+        0% {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+      }
 
-  @-webkit-keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(315deg);
-              transform: rotate(315deg);
-    }
-  }
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(315deg);
-              transform: rotate(315deg);
-    }
-  }
+  @-webkit-keyframes scale-out-ver-top {
+        0% {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+      }
+      @keyframes scale-out-ver-top {
+        0% {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+          -webkit-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+          opacity: 1;
+        }
+      }

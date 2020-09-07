@@ -1,28 +1,18 @@
-import React, { useState } from "react"
+import React from "react"
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import Typist from 'react-typist'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
-import Modal from '../components/modal'
-import About from '../components/about'
-import Skills from "../components/skills"
 
 const IndexPage = () =>{
-  const [showAboutModal, toggleAboutModal] = useState(false);
-  const [showSkillsModal, toggleSkillsModal] = useState(false);
-
   return (
     <Layout>
       <SEO title="Home" />
         <div style={styles}>
           <div className="main-content">
-            <Navbar
-              toggleAboutModal={toggleAboutModal}
-              toggleSkillsModal={toggleSkillsModal}
-            >
-            </Navbar>
+            <Navbar></Navbar>
             <div className="title">
               <Typist cursor={{hideWhenDone: true, blink: true}}>
                   <span>10010001001001</span>
@@ -44,17 +34,6 @@ const IndexPage = () =>{
             </div>
           </div>
         </div>
-        {showAboutModal &&
-          <Modal toggleModal={toggleAboutModal}>
-            <About></About>
-          </Modal>
-        }
-        {showSkillsModal &&
-          <Modal toggleModal={toggleSkillsModal}>
-            <h1 style={{textAlign: "center"}}>Skills</h1>
-            <Skills></Skills>
-          </Modal>
-        }
     </Layout>
   )
 }
