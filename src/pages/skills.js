@@ -47,7 +47,6 @@ const Skills = () => {
         <Layout>
             <Content>
                 <h1>Skills</h1>
-                These are some of the technologies I might be using on any given day
             </Content>
             <IconWrapper>
                 <IconCard>
