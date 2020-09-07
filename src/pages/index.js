@@ -8,7 +8,7 @@ import Navbar from "../components/navbar"
 
 const IndexPage = () =>{
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
         <div style={styles}>
           <div className="main-content">
@@ -34,7 +34,7 @@ const IndexPage = () =>{
             </div>
           </div>
         </div>
-    </Layout>
+    </>
   )
 }
 

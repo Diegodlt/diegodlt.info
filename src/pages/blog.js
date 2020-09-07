@@ -6,7 +6,6 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from '../components/share'
-import Navbar from "../components/navbar"
 import "../styles/blog.css"
 
 const BlogContent = styled.div`
@@ -44,7 +43,6 @@ const Blog = () => {
         <Layout>
             <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
             <Share></Share>
-            <Navbar></Navbar>
             <BlogContent>
               {data.allMarkdownRemark.edges.map(edge=>{
                   return(

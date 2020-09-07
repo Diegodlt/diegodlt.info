@@ -6,7 +6,6 @@ import { TiVendorMicrosoft } from "react-icons/ti"
 import styled from "styled-components"
 
 import Layout from '../components/layout'
-import Navbar from "../components/navbar"
 
 import { Content } from '../styles/content'
 
@@ -36,7 +35,6 @@ const IconWrapper = styled.div`
 const Skills = () => {
     return(
         <Layout>
-            <Navbar></Navbar>
             <Content>
                 <h1>Skills</h1>
                 These are some of the technologies I actively use and enjoy working with.

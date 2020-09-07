@@ -1,12 +1,10 @@
 import React from 'react'
 
-import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { Content } from '../styles/content'
 
 const About = () => (
     <Layout>
-        <Navbar></Navbar>
         <Content>
             <h1>About</h1>
             <p><strong>Hi I'm Diego,</strong></p>
