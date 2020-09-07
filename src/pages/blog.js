@@ -7,6 +7,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from '../components/share'
 import "../styles/blog.css"
+import Footer from '../components/footer'
+
+const BlogFooter = styled.div`
+    position: absolute;
+    bottom : 0;
+    left: 0;
+    width: 100%;
+`
 
 const BlogContent = styled.div`
   max-width: 700px;
@@ -56,6 +64,9 @@ const Blog = () => {
                   )
               })}
             </BlogContent>
+            <BlogFooter>
+              <Footer></Footer>
+            </BlogFooter>
         </Layout>
     )
 }

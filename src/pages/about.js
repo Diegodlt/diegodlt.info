@@ -1,7 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import { Content } from '../styles/content'
+import Footer from '../components/footer'
+
+const AboutFooter = styled.div`
+    position: absolute;
+    bottom : 0;
+    left: 0;
+    width: 100%;
+`
 
 const About = () => (
     <Layout>
@@ -21,6 +30,9 @@ const About = () => (
                 Other than that I like watching movies, drinking coffee, and eating good food. 
             </p>
         </Content>
+        <AboutFooter>
+            <Footer></Footer>
+        </AboutFooter>
     </Layout>
 )
 

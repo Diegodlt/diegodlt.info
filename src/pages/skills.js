@@ -8,7 +8,14 @@ import styled from "styled-components"
 import Layout from '../components/layout'
 
 import { Content } from '../styles/content'
+import Footer from '../components/footer'
 
+const SkillsFooter = styled.div`
+    position: absolute;
+    bottom : 0;
+    left: 0;
+    width: 100%;
+`
 const StyledIcon = styled.div`font-size: 5rem;`
 
 const IconCard = styled.div`
@@ -37,7 +44,7 @@ const Skills = () => {
         <Layout>
             <Content>
                 <h1>Skills</h1>
-                These are some of the technologies I actively use and enjoy working with.
+                These are some of the technologies I might be using on any given day
             </Content>
             <IconWrapper>
                 <IconCard>
@@ -77,6 +84,9 @@ const Skills = () => {
                     <span>.Net</span>
                 </IconCard>
             </IconWrapper>   
+            <SkillsFooter>
+                <Footer></Footer>
+            </SkillsFooter>
         </Layout>
     )
 }

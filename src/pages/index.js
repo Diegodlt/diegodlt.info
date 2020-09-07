@@ -1,10 +1,9 @@
 import React from "react"
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import Typist from 'react-typist'
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
+import Footer from '../components/footer'
 
 const IndexPage = () =>{
   return (
@@ -24,14 +23,7 @@ const IndexPage = () =>{
                   <span><strong>Software Developer</strong></span>
               </Typist>
             </div>
-            <div className="footer">
-              <a href="https://www.linkedin.com/in/diegodlt/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin />
-              </a>
-              <a href="https://github.com/Diegodlt" target="_blank" rel="noopener noreferrer">
-                  <FaGithub />
-              </a>
-            </div>
+            <Footer></Footer>
           </div>
         </div>
     </>

@@ -35,6 +35,7 @@ const IconContainer = styled.div`
     position: fixed;
     width: 0;
     font-size: 10px;
+    bottom: 0;
     span{
         margin: 0 0 6px 6px;
     }

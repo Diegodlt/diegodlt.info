@@ -75,7 +75,6 @@ const ActiveLink = (props) => {
 const Navbar = () => {
 
     const [isOpen, setOpen] = useState(false);
-    const activeLinkStyle = { color: "#00a8f3"}
     const isHome = window.location.pathname === '/' ? "home" : "";
 
     return(
