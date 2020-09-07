@@ -10,6 +10,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     justify-content: center;
     padding-bottom: 20px;
+    margin: 0 auto;
     a{
         color: ${props => props.home? "white" : "black"};
         margin: 0 10px;
