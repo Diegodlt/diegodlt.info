@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Share from '../components/share'
-import BlogNavbar from '../components/blogNavbar'
+import Navbar from '../components/navbar'
 
 const Content = styled.div`
     max-width: 700px;
@@ -66,7 +66,7 @@ const Blog = (props)=> {
             <Layout>
                 <SEO title={props.data.markdownRemark.frontmatter.title} />
                 <Share></Share>
-                <BlogNavbar></BlogNavbar>
+                <Navbar></Navbar>
                 <Content>
                     <div>
                         <PostTitle>{props.data.markdownRemark.frontmatter.title}</PostTitle>
