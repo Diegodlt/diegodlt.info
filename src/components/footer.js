@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "gatsby"
 
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const StyledFooter = styled.footer`
-    width: 100%;
-    text-align: center;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
     a{
         color: ${props => props.home? "white" : "black"};
         margin: 0 10px;
@@ -14,12 +18,19 @@ const StyledFooter = styled.footer`
     }
 `
 
+const EndItems = styled.div`
+
+`
+
 const Footer = () => {
     
     const isHome = window.location.pathname === '/';
 
     return(
         <StyledFooter home={isHome}>
+            {!isHome && <Link to="/" style={{fontSize: "12px"}}>
+                Diego De La Torre &copy; 2020
+            </Link>}
             <a href="https://www.linkedin.com/in/diegodlt/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
             </a>

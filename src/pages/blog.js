@@ -14,6 +14,9 @@ const BlogFooter = styled.div`
     bottom : 0;
     left: 0;
     width: 100%;
+    @media(max-width: 767px){
+      padding-bottom: 70px;
+    }
 `
 
 const BlogContent = styled.div`

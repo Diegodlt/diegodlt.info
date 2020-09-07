@@ -5,7 +5,13 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Share from '../components/share'
+import Footer from '../components/footer'
 
+const BlogFooter = styled.div`
+    @media(max-width: 767px){
+        padding-bottom: 70px;
+    }
+`
 const Content = styled.div`
     max-width: 700px;
     margin: auto;
@@ -75,6 +81,9 @@ const Blog = (props)=> {
                     <PostBody dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}}>
                     </PostBody>
                 </Content>
+                <BlogFooter>
+                    <Footer></Footer>
+                </BlogFooter>
             </Layout>
         </>
     )

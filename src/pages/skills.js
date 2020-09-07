@@ -15,6 +15,9 @@ const SkillsFooter = styled.div`
     bottom : 0;
     left: 0;
     width: 100%;
+    @media(max-width: 767px){
+        position: static;
+    }
 `
 const StyledIcon = styled.div`font-size: 5rem;`
 
