@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
     padding-bottom: 20px;
     margin: 0 auto;
     a{
-        color: ${props => props.home? "white" : "black"};
+        color: ${props => props.home? "white" : "gray"};
         margin: 0 10px;
         font-size: 1.75rem;
         text-decoration: none;
