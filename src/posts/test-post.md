@@ -1,7 +1,9 @@
 ---
-title: "Pixel Drawer with Angular"
+title: "Building a Simple Project with Angular"
 subtitle: "Just another subtitle"
 date: "Feb 25, 2020"
+metaDescription: "Learn how to build a simple project with Angular using Directives and Services."
+image: "angular.png"
 ---
 
 <style type="text/css" rel="stylesheet">

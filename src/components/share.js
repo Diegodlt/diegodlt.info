@@ -72,26 +72,40 @@ const ShareLabel = styled.button`
     }
 `
 
-const Share = () => {
+const Share = ({url, title}) => {
     return(
         <IconContainer>
             <ShareLabel>Shares</ShareLabel>
-            <LinkedinShareButton>
+            <LinkedinShareButton
+                url={url}
+                title={title}
+                source={url}
+            >
                 <Icon>
                     <FiLinkedin></FiLinkedin>
                 </Icon>
             </LinkedinShareButton>
-            <TwitterShareButton>
+            <TwitterShareButton 
+                url={url} 
+                title={title} 
+                via="Diego_dlt"
+            >
                 <Icon>
                     <FiTwitter></FiTwitter>
                 </Icon>
             </TwitterShareButton>
-            <FacebookShareButton>
+            <FacebookShareButton 
+                url={url}
+                quote={title} 
+            >
                 <Icon>
                     <FiFacebook></FiFacebook>
                 </Icon>
             </FacebookShareButton>
-            <EmailShareButton>
+            <EmailShareButton
+                url={url}
+                subject={title}
+            >
                 <Icon>
                     <FiMail></FiMail>
                 </Icon>

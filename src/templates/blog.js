@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import { useLocation } from '@reach/router'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,6 +13,7 @@ const BlogFooter = styled.div`
         padding-bottom: 70px;
     }
 `
+
 const Content = styled.div`
     max-width: 700px;
     margin: auto;
@@ -59,6 +61,8 @@ export const query = graphql`
             frontmatter {
                 title
                 date
+                metaDescription
+                image
             }
             html
         }
@@ -66,14 +70,24 @@ export const query = graphql`
 `
 
 const Blog = (props)=> {
+    const { href } = useLocation();
+    const pageTitle = props.data.markdownRemark.frontmatter.title;
+    const imageUrl = `/${props.data.markdownRemark.frontmatter.image}`;
     return(
         <>
             <Layout>
-                <SEO title={props.data.markdownRemark.frontmatter.title} />
-                <Share></Share>
+                <SEO 
+                    title={pageTitle} 
+                    description={props.data.markdownRemark.frontmatter.metaDescription}
+                    imageUrl={imageUrl}
+                />
+                <Share
+                    url={href}
+                    title={pageTitle}
+                ></Share>
                 <Content>
                     <div>
-                        <PostTitle>{props.data.markdownRemark.frontmatter.title}</PostTitle>
+                        <PostTitle>{pageTitle}</PostTitle>
                         <Time>
                             {props.data.markdownRemark.frontmatter.date}
                         </Time>
