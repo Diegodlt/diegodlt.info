@@ -5,7 +5,12 @@ module.exports = {
     author: `Diego De La Torre`,
   },
   plugins: [
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        generateMatchPathRewrites: true
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
