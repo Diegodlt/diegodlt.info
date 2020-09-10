@@ -19,6 +19,20 @@ image: "angular.png"
         font-size: 14px;
     }
 
+    p img{
+      display: block;
+      margin: auto;
+    }
+
+    img[alt="Pixel Drawer using Angular"]{
+      max-width: 100%;
+    }
+
+    .gatsby-highlight-code-line{
+      display: block;
+      background-color: #5f5f5f;
+    }
+
     @media(max-width: 767px){
       pre[class*="language-"]{
         font-size: 12px;
@@ -28,7 +42,9 @@ image: "angular.png"
 
 I’ve always felt that small projects, as simple as they might seem, are a great way to learn or reinforce one’s knowledge of a technology or framework. Although one might feel that his or her effort might be wasted working on something that might not be significant, small projects provide great insight that can be extremely beneficial later in one’s career. 
 
-In this blog post, I will document the process of building a simple pixel drawer with Angular. This will be the final Product: 
+In this blog post, I will document the process of building a simple pixel drawer with Angular.
+
+![Angular Pixel Drawer](./pixel-drawer-angular.PNG)
 
 ## Overview
 The pixel drawer will have minor functionality and will be composed of four key pieces:
@@ -43,7 +59,7 @@ I want to keep this project as simple as possible so I only plan on adding three
 2.	Clear pixels
 3.	Color selector
 
-The add row/column and clear pixel controls will be buttons with `onclick` listeners. The color selector control will be an input with an `onchange` listener with the event being passed as a parameter to capture the selected color.
+The add row/column and clear pixel controls will be buttons with `onclick` listeners. The color selector control will be an input with an `onchange` listener with the event being passed as a parameter to capture the selected color. We'll worry about binding the click listener methods later.
 
 ```html
 <!-- app.component.html -->
@@ -67,6 +83,7 @@ The add row/column and clear pixel controls will be buttons with `onclick` liste
         value="#ffffff"
         >
 </div>
+
 ```
 
 ## Pixel-Fill Directive
@@ -75,6 +92,9 @@ The `pixel-fill` directive will be an attribute directive that is one of three t
 For now, the only thing the pixel-fill directive will do is change the color of the pixel and clear the pixel. This will be done by adding the `mouseenter` event listener that will change the color of the pixel when the mouse hovers over it, and a `clearPixel()` method that will change the color to `#fff`.
 
 ```typescript
+/**
+ * pixel-fill.directive.ts
+ */ 
 import { Directive, HostListener, ElementRef } from '@angular/core';
 import { PixelService } from './pixel.service';
 
@@ -95,9 +115,16 @@ export class PixelFillDirective {
     }
 
 }
+
+/**
+ * app.component.html
+ */
+<div pixelFill style="width: 50px; height: 50px; border: 1px solid black;"></div>
+
+
 ```
 
-<show gif>
+![Using Attribute Directive](filled-pixel.gif)
 
 It works! But the color is hard coded, so let’s change that.
 
@@ -113,6 +140,9 @@ A service in Angular is simply a function that can be injected into multiple com
 For now, the only field in the pixel service will be the current color that is selected in the app component. This service will need to be injected in both the `app component` and the `pixel-fill` directive.
 
 ```typescript
+/**
+ * pixel.service.ts
+ */
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
@@ -132,15 +162,15 @@ export class PixelFillDirective {
 
     constructor(
         private elRef: ElementRef,
-        private pixelService: PixelService
+        private pixelService: PixelService //highlight-line
     ) { }
 
     @HostListener('mouseenter') onHover(){
-        this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
+        this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor; //highlight-line
     }
     
     @HostListener('mousedown') onMouseDown(){
-        this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
+        this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor; //highlight-line
     }
 
     clearPixel(){
@@ -158,7 +188,7 @@ export class AppComponent implements OnInit {
   }
 
   constructor(
-    private pixelService: PixelService
+    private pixelService: PixelService //highlight-line
   ){}
 
   addCol(){ }
@@ -168,7 +198,7 @@ export class AppComponent implements OnInit {
   onClearBoard(){ }
 
   onColorChange(event){
-    this.pixelService.currentColor = event.target.value;
+    this.pixelService.currentColor = event.target.value; //highlight-line
   }
 
 }
@@ -266,8 +296,10 @@ Using the `@ViewChild` with the `PixelBoardComponent` as a parameter and storing
 ```typescript
 export class AppComponent implements OnInit {
 
+  //highlight-start
   @ViewChild(PixelBoardComponent, {static: false})
   pixelBoard: PixelBoardComponent;
+  //highlight-end
 
   ngOnInit(){
   }
@@ -277,15 +309,15 @@ export class AppComponent implements OnInit {
   ){}
 
   addCol(){
-    this.pixelBoard.addColumn();
+    this.pixelBoard.addColumn(); //highlight-line
   }
 
   addRow(){
-    this.pixelBoard.addRow();
+    this.pixelBoard.addRow(); //highlight-line
   }
 
   onClearBoard(){
-    this.pixelBoard.clearPixels();
+    this.pixelBoard.clearPixels(); //highlight-line
   }
 
   onColorChange(event){
@@ -314,7 +346,7 @@ Let’s add a private variable with the name `_clicked` along with its correspon
  */
 export class PixelService {
 
-    private _clicked = false;
+    private _clicked = false; //highlight-line
     currentColor = '';
 
     constructor() { }
@@ -340,18 +372,18 @@ export class PixelFillDirective {
     ) { }
 
     @HostListener('mouseenter') onHover(){
-        if(this.pixelService.clicked){
+        if(this.pixelService.clicked){ //highlight-line
             this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
         }
     }
     
     @HostListener('mousedown') onMouseDown(){
         this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
-        this.pixelService.clicked = true;
+        this.pixelService.clicked = true; //highlight-line
     }
 
     @HostListener('mouseup') onMouseUp(){
-        this.pixelService.clicked = false;
+        this.pixelService.clicked = false; //highlight-line
     }
 
     clearPixel(){
@@ -365,14 +397,18 @@ So on `mousedown` the value of click will be set to true. In the `mouseenter` ho
 
 Alright, now we’re done! Or are we?
 
-### Adding a hostlistener to the pixel board
 There is still one small issue, which is that the `clicked` field is not set to false when the mouse leaves the board. This is because there is no host listener on the pixel directive that will set the `clicked` value to false. 
+
+### Adding a hostlistener to the pixel board
 
 Adding a `mouseleave` host listener to the pixel would not work, as the value would always be set to false upon the mouse leaving the pixel. This would cancel the “click and drag” function. 
 
 So instead, we will inject the pixel-service to the pixel-board component and add the `mouseleave` hostlistener which will set the value of `clicked` to false when the mouse leaves the board. 
 
 ```typescript
+/**
+ * pixel-board.component.ts
+ */
 export class PixelBoardComponent implements OnInit{
 
     @HostListener('mouseleave')
@@ -389,4 +425,16 @@ I think using a service for component communication might have been a bit of an 
 
 As you can see, even with a small project such as this one, a developer must make many design and architecture decisions. One will most likely have to comb through the documentation along the way. 
 
-I encourage everyone to build a simple project like this one because even the smallest projects will often challenge one’s knowledge of the technology or framework in use. You can see the source code here <link> and view the application here <link>.
+I encourage everyone to build a simple project like this one because even the smallest projects will often challenge one’s knowledge of the technology or framework in use.
+
+<p>
+  <a href="https://pixeldrawer.z13.web.core.windows.net/" target="_blank">
+    Check out the project here!
+  </a>
+</p>
+
+<p>
+  <a href="https://github.com/Diegodlt/pixel-drawer-angular" target="_blank">
+    Check out the source code!
+  </a>
+</p>
