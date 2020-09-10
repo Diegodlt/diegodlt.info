@@ -38,9 +38,11 @@ const Footer = () => {
 
     return(
         <footer style={FooterStyles}>
-            {!isHome && <Link to="/" style={{...FooterLinkStyles,fontSize: "12px"}}>
-                Diego De La Torre &copy; 2020
-            </Link>}
+            {!isHome && 
+                <Link to="/" style={{...FooterLinkStyles,fontSize: "12px"}}>
+                    Diego De La Torre &copy; 2020
+                </Link>
+            }
             <FooterLink href="https://www.linkedin.com/in/diegodlt/" isHome={isHome}>
                 <FaLinkedin />
             </FooterLink>
