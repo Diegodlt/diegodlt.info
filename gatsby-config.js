@@ -5,6 +5,7 @@ module.exports = {
     author: `Diego De La Torre`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
