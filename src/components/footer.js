@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from "gatsby"
+import { useLocation } from '@reach/router'
 
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
 
@@ -25,7 +26,8 @@ const EndItems = styled.div`
 
 const Footer = () => {
     
-    const isHome = window.location.pathname === '/';
+    const { pathname } = useLocation();
+    const isHome = pathname === '/';
 
     return(
         <StyledFooter home={isHome}>

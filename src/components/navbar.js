@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Squash as Hamburger } from 'hamburger-react'
+import { useLocation } from '@reach/router'
 
 import Modal from '../components/modal'
 
@@ -75,7 +76,8 @@ const ActiveLink = (props) => {
 const Navbar = () => {
 
     const [isOpen, setOpen] = useState(false);
-    const isHome = window.location.pathname === '/' ? "home" : "";
+    const { pathname } = useLocation();
+    const isHome = pathname === '/';
 
     return(
         <Nav home={isHome}>
