@@ -20,10 +20,6 @@ const StyledFooter = styled.footer`
     }
 `
 
-const EndItems = styled.div`
-
-`
-
 const Footer = () => {
     
     const { pathname } = useLocation();
@@ -34,6 +30,9 @@ const Footer = () => {
             {!isHome && <Link to="/" style={{fontSize: "12px"}}>
                 Diego De La Torre &copy; 2020
             </Link>}
+            <a>
+                Pathname: {pathname}
+            </a>
             <a href="https://www.linkedin.com/in/diegodlt/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
             </a>
