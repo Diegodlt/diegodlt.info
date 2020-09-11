@@ -29,7 +29,6 @@ image: "angular.png"
     }
 
     .gatsby-highlight-code-line{
-      display: block;
       background-color: #5f5f5f;
     }
 
@@ -53,7 +52,7 @@ The pixel drawer will have minor functionality and will be composed of four key 
 3. `Pixel service` will store state that is needed across the different components that make up the application.
 4. `Pixel-board` component will contain references to the pixel directives as well as methods and variables that give the board shape and functionality.
 
-## App component
+## App Component
 I want to keep this project as simple as possible so I only plan on adding three controls that will provide some needed functionality:
 1.	Add row/column
 2.	Clear pixels
@@ -128,7 +127,7 @@ export class PixelFillDirective {
 
 It works! But the color is hard coded, so let’s change that.
 
-### Communicating between components
+### Communicating Between Components
 
 The color is controlled by the app component, so the `pixel-fill` directive does not have direct access to it, which means that some sort of component communication must be put in place. When it comes to this topic in Angular, just like many other programming problems, there are multiple approaches one can take to arrive at the same place. 
 
@@ -163,14 +162,17 @@ export class PixelFillDirective {
     constructor(
         private elRef: ElementRef,
         private pixelService: PixelService //highlight-line
+
     ) { }
 
     @HostListener('mouseenter') onHover(){
         this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor; //highlight-line
+
     }
     
     @HostListener('mousedown') onMouseDown(){
         this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor; //highlight-line
+
     }
 
     clearPixel(){
@@ -189,6 +191,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private pixelService: PixelService //highlight-line
+
   ){}
 
   addCol(){ }
@@ -199,6 +202,7 @@ export class AppComponent implements OnInit {
 
   onColorChange(event){
     this.pixelService.currentColor = event.target.value; //highlight-line
+
   }
 
 }
@@ -209,10 +213,10 @@ The pixel board will serve as a container for all the `pixel-fill` directives th
 
 Also, it must keep a reference of the `pixel-fill` directives so that it can access the methods defined in the directive, which is another way to provide component communication. This can be done by using the `@ViewChildren` decorator which will store the references to the `pixel-fill` directive. In this case, the only `pixel-fill` method that the pixel-board will access is `clearPixel()`. 
 
-### Calculating board and pixel size
+### Calculating Board and Pixel Size
 A pixel’s size is determined by the readonly `PIXEL_SIZE` which is applied directly to the `div` using Angular’s `ngStyle` directive, which allows one to apply dynamic styles to an element. The height and width of the board will be calculated by multiplying `PIXEL_SIZE` by the number of rows and columns respectively.
 
-### Initializing the board
+### Initializing the Board
 To render the board with pixels, we will have to create a loop that will iterate the DOM to add all the `pixel-fill` directives. To solve this, let’s create an array filled with arrays and fill those arrays with 0’s. This is the resulting `pixel-board` code.
 
 ```typescript
@@ -288,7 +292,7 @@ export class PixelBoardComponent implements OnInit{
 }
 
 ```
-### Connecting the controls
+### Connecting the Controls
 The methods for adding rows/columns and clearing the pixels currently live inside the `app component`. These methods need to access the methods inside the `pixel-board` that are responsible for changing the state of the board. 
 
 Using the `@ViewChild` with the `PixelBoardComponent` as a parameter and storing in it a variable will give us a reference to that component. This will allow the app component to access all the public methods found in the `pixel-board` component. With that done, the `pixel-board` has full functionality.
@@ -310,14 +314,17 @@ export class AppComponent implements OnInit {
 
   addCol(){
     this.pixelBoard.addColumn(); //highlight-line
+
   }
 
   addRow(){
     this.pixelBoard.addRow(); //highlight-line
+
   }
 
   onClearBoard(){
     this.pixelBoard.clearPixels(); //highlight-line
+
   }
 
   onColorChange(event){
@@ -334,7 +341,7 @@ Although we can now resize, clear, and draw across the board, there is still one
 ## Click and Drag
 At the moment, the pixels are being filled every time the mouse hovers over a particular pixel. The desired behavior is of a typical drawing application where the user must click and hold down the mouse button, then drag it over the board in order to fill the pixels. This is an essential part of the application. Again, there are probably countless ways of replicating this behavior, but I think we should use something that is already in place — time to revisit the `pixel-service`.
 
-### Adding the “clicked” field to pixel service
+### Adding the “clicked” Field to Pixel Service
 
 Since every component where the service is used will receive the same instance of the service, I think it’s a perfect place to add a variable to keep track of when the mouse button is down. This variable can then be used in other components, such as the `pixel-directive`, to determine whether a pixel should be filled when the mouse is hovered over it.
 
@@ -347,6 +354,7 @@ Let’s add a private variable with the name `_clicked` along with its correspon
 export class PixelService {
 
     private _clicked = false; //highlight-line
+
     currentColor = '';
 
     constructor() { }
@@ -373,6 +381,7 @@ export class PixelFillDirective {
 
     @HostListener('mouseenter') onHover(){
         if(this.pixelService.clicked){ //highlight-line
+
             this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
         }
     }
@@ -380,10 +389,12 @@ export class PixelFillDirective {
     @HostListener('mousedown') onMouseDown(){
         this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
         this.pixelService.clicked = true; //highlight-line
+
     }
 
     @HostListener('mouseup') onMouseUp(){
         this.pixelService.clicked = false; //highlight-line
+
     }
 
     clearPixel(){
@@ -399,7 +410,7 @@ Alright, now we’re done! Or are we?
 
 There is still one small issue, which is that the `clicked` field is not set to false when the mouse leaves the board. This is because there is no host listener on the pixel directive that will set the `clicked` value to false. 
 
-### Adding a hostlistener to the pixel board
+### Adding a Hostlistener to the Pixel Board
 
 Adding a `mouseleave` host listener to the pixel would not work, as the value would always be set to false upon the mouse leaving the pixel. This would cancel the “click and drag” function. 
 
