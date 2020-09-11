@@ -5,61 +5,11 @@ import { Squash as Hamburger } from 'hamburger-react'
 import { useLocation } from '@reach/router'
 
 import Modal from '../components/modal'
-
-const Nav = styled.div`
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Raleway';
-    letter-spacing: 1px;
-    font-size: 19px;
-    box-shadow: ${props => props.home? "" : "0px 0px 5px -1px rgba(0,0,0, 0.3)"};
-    a{
-        color: ${props => props.home ? "white" : "black"};
-        text-decoration: none;
-    }
-    @media(max-width: 767px){
-        padding: 10px 20px;
-    }
-`
-
-const EndItems = styled.div`
-    display: flex;
-    a{
-        margin-left: 30px;
-    }
-    @media(max-width: 767px){
-        display: none;
-    }
-`
-
-const Bun = styled.div`
-    display: none;
-    z-index: 1000;
-    @media(max-width: 767px){
-        display: block;
-    }
-`
-
-const MobileLinks = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    a{
-        padding: 20px 0;
-        font-size: 30px;
-        color: white;
-    }
-`
+import classes from '../styles/navbar.module.css'
 
 const getIconColor = (isHome, isOpen) =>{
-    if(!isOpen){
-       if(isHome){
-           return "white";
-       }else{
-           return "black";
-       } 
+    if(!isOpen && !isHome){
+        return "black";
     }
     return "white";
 }
@@ -67,7 +17,10 @@ const getIconColor = (isHome, isOpen) =>{
 const ActiveLink = (props) => {
     const activeLinkStyle = { color: "#00a8f3" }
     return(
-        <Link {...props} activeStyle={activeLinkStyle}>
+        <Link 
+            {...props} 
+            activeStyle={activeLinkStyle} 
+        >
             {props.children}
         </Link>
     )
@@ -78,26 +31,39 @@ const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
     const { pathname } = useLocation();
     const isHome = pathname === '/';
+    const color = isHome ? "white" : "black";
 
     return(
-        <Nav home={isHome}>
-            <Link to="/">Diego De La Torre</Link>
-            <Bun>
-                <Hamburger size={20} toggled={isOpen} toggle={setOpen} color={getIconColor(isHome, isOpen)}/>
-            </Bun>
-            <EndItems>
-                <ActiveLink to="/about">About</ActiveLink>
-                <ActiveLink to="/skills">Skills</ActiveLink>
-                <ActiveLink to="/blog">Blog</ActiveLink>
-            </EndItems>
+        <div 
+            className={classes.Navbar}
+            style={{
+                boxShadow: isHome && "none"
+            }}
+        >
+            <Link style={{color}} to="/">
+                Diego De La Torre
+            </Link>
+            <div className={classes.Bun}>
+                <Hamburger 
+                    size={20} 
+                    toggled={isOpen} 
+                    toggle={setOpen} 
+                    color={getIconColor(isHome, isOpen)}
+                />
+            </div>
+            <div className={classes.EndItems}>
+                <ActiveLink style={{color}} to="/about">About</ActiveLink>
+                <ActiveLink style={{color}} to="/skills">Skills</ActiveLink>
+                <ActiveLink style={{color}} to="/blog">Blog</ActiveLink>
+            </div>
             <Modal isOpen={isOpen}>
-                <MobileLinks>
+                <div className={classes.MobileLinks}>
                     <ActiveLink to="/about">About</ActiveLink>
                     <ActiveLink to="/skills">Skills</ActiveLink>
                     <ActiveLink to="/blog">Blog</ActiveLink>
-                </MobileLinks>
+                </div>
             </Modal>
-        </Nav>
+        </div>
     )
 }
 
