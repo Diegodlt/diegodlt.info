@@ -1,0 +1,64 @@
+.IconContainer{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 0;
+    font-size: 10px;
+    bottom: 0;
+}
+
+.IconContainer span{
+    margin: 0 0 6px 6px;
+}
+
+.Icon{
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 30px;
+    animation: shrink 0.1s linear both;
+}
+
+.Icon:hover{
+    animation: expand 0.1s linear both;
+}
+
+.ShareLabel{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 10px;
+    background-color: white;
+    width: 50px;
+    padding: 19px 0;
+}
+
+@media(max-width: 767px){
+    .IconContainer{
+        flex-direction: row;
+        bottom: 0;
+        right: 0;
+        justify-content: flex-end;
+        height: auto; 
+    }
+    .ShareLabel{
+        padding: 18px 8px;
+    }
+}
+
+@keyframes expand{
+    to{
+        width: 40px;
+    }
+}
+
+@keyframes shrink{
+    from{
+        width: 40px;
+    }
+    to{
+        width: 30px;
+    }
+}
