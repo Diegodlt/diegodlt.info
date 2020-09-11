@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from "gatsby"
+import { useLocation } from '@reach/router'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -30,11 +31,11 @@ const Blog = () => {
       }
     }
     `)
-
+    const { href } = useLocation();
     return(
         <Layout>
             <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
-            <Share></Share>
+            <Share url={href} title="A blog by Diego De La Torre"></Share>
             <div className="BlogContent">
               {data.allMarkdownRemark.edges.map(edge=>{
                   return(
