@@ -23,9 +23,9 @@ export const query = graphql`
 `
 
 const Blog = (props)=> {
-    const { href } = useLocation();
+    const { href, hostname } = useLocation();
     const pageTitle = props.data.markdownRemark.frontmatter.title;
-    const imageUrl = `/${props.data.markdownRemark.frontmatter.image}`;
+    const imageUrl = `${hostname}/${props.data.markdownRemark.frontmatter.image}`;
     return(
         <>
             <Layout>
@@ -41,7 +41,7 @@ const Blog = (props)=> {
                 <div className={classes.Content}>
                     <div>
                         <h1 className={classes.PostTitle}>{pageTitle}</h1>
-                        <time styles={{fontFamily: "Raleway"}}>
+                        <time style={{fontFamily: 'Raleway'}}>
                             {props.data.markdownRemark.frontmatter.date}
                         </time>
                     </div>

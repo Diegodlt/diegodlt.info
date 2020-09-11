@@ -1,7 +1,7 @@
 ---
 title: "Building a Simple Project with Angular"
-subtitle: "Just another subtitle"
-date: "Feb 25, 2020"
+subtitle: "One of the best way of learning or reinforcing one's knowledge of a framework/technology is to build a small, simple project."
+date: "Sep 11, 2020"
 metaDescription: "Learn how to build a simple project with Angular using Directives and Services."
 image: "angular.png"
 ---

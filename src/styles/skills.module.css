@@ -29,4 +29,7 @@
     .IconWrapper{
         flex-direction: column;
     }
+    .IconCard span{
+        font-size: 22px;
+    }
 }
