@@ -33,11 +33,29 @@ article time{
     font-family: 'Open Sans';
 }
 
+.BlogFooter{
+    position: absolute;
+    bottom : 0;
+    left: 0;
+    width: 100%;
+}
+
+.BlogContent{
+    max-width: 700px;
+    margin: auto;
+}
+
 @media(max-width: 767px){
     article h1{
         font-size: 22px;
     }
     article p, time{
         font-size: 14px;
+    }
+    .BlogFooter{
+        padding-bottom: 70px;
+    }
+    .BlogContent{
+        padding: 0 20px;
     }
 }

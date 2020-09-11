@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
 import { Squash as Hamburger } from 'hamburger-react'
 import { useLocation } from '@reach/router'
 

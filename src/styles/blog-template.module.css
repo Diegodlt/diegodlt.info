@@ -1,0 +1,44 @@
+.Content{
+    max-width: 700px;
+    margin: auto;
+}
+
+.PostTitle{
+    font-family: 'Raleway';
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.PostBody{
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
+.PostBody h1{
+    font-family: 'Raleway';
+}
+
+.PostBody h2{
+    font-size: 32px;
+}
+
+@media(max-width: 767px){
+    .Content{
+        padding: 0 20px;
+    }
+    .BlogFooter{
+        padding-bottom: 70px;
+    }
+    .PostTitle{
+        font-size: 30px;
+    }
+    .PostBody{
+        font-size: 18px;
+    }
+    .PostBody h2{
+        font-size: 26px;
+    }
+    .PostBody h3{
+        font-size: 20px;
+    }
+}

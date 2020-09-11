@@ -1,31 +1,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from "gatsby"
-import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from '../components/share'
 import "../styles/blog.css"
 import Footer from '../components/footer'
-
-const BlogFooter = styled.div`
-    position: absolute;
-    bottom : 0;
-    left: 0;
-    width: 100%;
-    @media(max-width: 767px){
-      padding-bottom: 70px;
-    }
-`
-
-const BlogContent = styled.div`
-  max-width: 700px;
-  margin: auto;
-  @media(max-width: 767px){
-    padding: 0 20px;
-  }
-`
 
 const Blog = () => {
     const data = useStaticQuery(graphql`
@@ -54,7 +35,7 @@ const Blog = () => {
         <Layout>
             <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
             <Share></Share>
-            <BlogContent>
+            <div className="BlogContent">
               {data.allMarkdownRemark.edges.map(edge=>{
                   return(
                   <article key={edge.node.id}>
@@ -66,10 +47,10 @@ const Blog = () => {
                   </article>
                   )
               })}
-            </BlogContent>
-            <BlogFooter>
+            </div>
+            <div className="BlogFooter">
               <Footer></Footer>
-            </BlogFooter>
+            </div>
         </Layout>
     )
 }

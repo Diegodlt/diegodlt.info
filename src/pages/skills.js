@@ -6,41 +6,21 @@ import { TiVendorMicrosoft } from "react-icons/ti"
 import styled from "styled-components"
 
 import Layout from '../components/layout'
-
 import { Content } from '../styles/content'
 import Footer from '../components/footer'
+import classes from '../styles/skills.module.css'
 
-const SkillsFooter = styled.div`
-    position: absolute;
-    bottom : 0;
-    left: 0;
-    width: 100%;
-    @media(max-width: 767px){
-        position: static;
-    }
-`
-const StyledIcon = styled.div`font-size: 5rem;`
+const StyledIcon = ({children}) => (
+    <div style={{fontSize: "5rem"}}>
+        {children}
+    </div>
+)
 
-const IconCard = styled.div`
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    margin: 25px 40px;
-    align-items: center;
-`
-
-const IconWrapper = styled.div`
-    margin-top: 30px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-
-    @media(max-width: 767px){
-        flex-direction: column;
-    }
-`
+const IconCard = ({children}) => (
+    <div className={classes.IconCard}>
+        {children}
+    </div>
+)
 
 const Skills = () => {
     return(
@@ -48,7 +28,7 @@ const Skills = () => {
             <Content>
                 <h1>Skills</h1>
             </Content>
-            <IconWrapper>
+            <div className={classes.IconWrapper}>
                 <IconCard>
                     <StyledIcon>
                         <FaReact />
@@ -85,10 +65,10 @@ const Skills = () => {
                     </StyledIcon>
                     <span>.Net</span>
                 </IconCard>
-            </IconWrapper>   
-            <SkillsFooter>
+            </div>   
+            <div className={classes.SkillsFooter}>
                 <Footer></Footer>
-            </SkillsFooter>
+            </div>
         </Layout>
     )
 }
