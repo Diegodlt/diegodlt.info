@@ -24,8 +24,8 @@ image: "angular.png"
       margin: auto;
     }
 
-    img[alt="Pixel Drawer using Angular"]{
-      max-width: 100%;
+    img[alt="Angular Pixel Drawer"]{
+      width: 100%;
     }
 
     .gatsby-highlight-code-line{
