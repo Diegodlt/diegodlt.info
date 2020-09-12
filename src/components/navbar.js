@@ -52,13 +52,11 @@ const Navbar = () => {
             </div>
             <div className={classes.EndItems}>
                 <ActiveLink style={{color}} to="/about">About</ActiveLink>
-                <ActiveLink style={{color}} to="/skills">Skills</ActiveLink>
                 <ActiveLink style={{color}} to="/blog">Blog</ActiveLink>
             </div>
             <Modal isOpen={isOpen}>
                 <div className={classes.MobileLinks}>
                     <ActiveLink to="/about">About</ActiveLink>
-                    <ActiveLink to="/skills">Skills</ActiveLink>
                     <ActiveLink to="/blog">Blog</ActiveLink>
                 </div>
             </Modal>
