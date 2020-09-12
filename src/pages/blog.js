@@ -34,7 +34,7 @@ const Blog = () => {
     const { href } = useLocation();
     return(
         <Layout>
-            <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
+            <SEO title="Blog" description="A blog written by Diego De La Torre. I write mostly about technology, and the problems I face and the things I like to build along the way."></SEO>
             <Share url={href} title="A blog by Diego De La Torre"></Share>
             <div className="BlogContent">
               <div className="blog-title">

@@ -23,16 +23,15 @@ export const query = graphql`
 `
 
 const Blog = (props)=> {
-    const { href, hostname } = useLocation();
+    const { href } = useLocation();
     const pageTitle = props.data.markdownRemark.frontmatter.title;
-    const imageUrl = `${hostname}/${props.data.markdownRemark.frontmatter.image}`;
     return(
         <>
             <Layout>
                 <SEO 
                     title={pageTitle} 
                     description={props.data.markdownRemark.frontmatter.metaDescription}
-                    imageUrl={imageUrl}
+                    image={props.data.markdownRemark.frontmatter.image}
                 />
                 <Share
                     url={href}
