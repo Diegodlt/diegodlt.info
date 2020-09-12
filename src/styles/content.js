@@ -8,8 +8,8 @@ export const Content = styled.div`
     padding: 0 20px;
     h1{
         font-family: 'Raleway';
-        text-align: center;
         font-size: 40px;
+        padding: 30px 0 29px 0;
     }
     @media(max-width: 767px){
         font-size: 18px;
