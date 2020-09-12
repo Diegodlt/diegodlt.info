@@ -37,6 +37,14 @@ const Blog = () => {
             <SEO title="Blog" description="A blog written by Diego De La Torre"></SEO>
             <Share url={href} title="A blog by Diego De La Torre"></Share>
             <div className="BlogContent">
+              <div className="blog-title">
+                <h1>
+                  Blog
+                </h1>
+                <p>
+                  I write mostly about technology, and the problems I face and the things I like to build along the way.
+                </p>
+              </div>
               {data.allMarkdownRemark.edges.map(edge=>{
                   return(
                   <article key={edge.node.id}>
