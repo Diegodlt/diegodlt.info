@@ -3,7 +3,8 @@ module.exports = {
     title: `Diego De La Torre`,
     description: `Personal Website`,
     author: `Diego De La Torre`,
-    siteUrl: `https://diegodlt.info`
+    siteUrl: `https://diegodlt.info`,
+    siteImg: `computer.jpg`
   },
   plugins: [
     {
