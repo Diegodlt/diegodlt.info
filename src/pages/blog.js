@@ -42,7 +42,7 @@ const Blog = () => {
                   Blog
                 </h1>
                 <p>
-                  I write mostly about technology, and the problems I face and the things I like to build along the way.
+                  I write mostly about technology.
                 </p>
               </div>
               {data.allMarkdownRemark.edges.map(edge=>{

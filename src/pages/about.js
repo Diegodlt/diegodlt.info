@@ -3,13 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Content } from '../styles/content'
 import Footer from '../components/footer'
-
-const aboutFooter = {
-    position: "absolute",
-    bottom : 0,
-    left: 0,
-    width: "100%"
-}
+import classes from '../styles/footer.module.css'
 
 const About = () => (
     <Layout>
@@ -29,7 +23,7 @@ const About = () => (
                 Other than that I like watching movies, drinking coffee, and eating good food. 
             </p>
         </Content>
-        <div style={aboutFooter}>
+        <div className={classes.AboutFooter}>
             <Footer></Footer>
         </div>
     </Layout>
